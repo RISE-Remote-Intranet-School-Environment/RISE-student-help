@@ -1,5 +1,93 @@
-# ms-studentHelp
-Student support platform <br />
+# Micro Service Student Help
+## (Put a tree emoji here) Tree Structure
+```
+├───.idea
+└───ms_studenthelp
+    ├───.gradle
+    │   ├───7.2
+    │   │   ├───dependencies-accessors
+    │   │   ├───executionHistory
+    │   │   ├───fileChanges
+    │   │   ├───fileHashes
+    │   │   └───vcsMetadata-1
+    │   ├───7.5.1
+    │   │   ├───checksums
+    │   │   ├───dependencies-accessors
+    │   │   ├───executionHistory
+    │   │   ├───fileChanges
+    │   │   ├───fileHashes
+    │   │   └───vcsMetadata
+    │   ├───buildOutputCleanup
+    │   ├───checksums
+    │   └───vcs-1
+    ├───.settings
+    ├───bin
+    │   ├───main
+    │   │   └───be
+    │   │       └───ecam
+    │   │           └───ms_studenthelp
+    │   │               ├───Database
+    │   │               │   └───mysql
+    │   │               │       └───MySqlSerializer
+    │   │               ├───Interfaces
+    │   │               ├───Object
+    │   │               └───utils
+    │   └───test
+    │       └───be
+    │           └───ecam
+    │               └───ms_studenthelp
+    ├───build
+    │   ├───classes
+    │   │   └───java
+    │   │       └───main
+    │   │           └───be
+    │   │               └───ecam
+    │   │                   └───ms_studenthelp
+    │   │                       ├───Database
+    │   │                       │   └───mysql
+    │   │                       │       └───MySqlSerializer
+    │   │                       ├───Interfaces
+    │   │                       ├───Object
+    │   │                       └───utils
+    │   ├───generated
+    │   │   └───sources
+    │   │       ├───annotationProcessor
+    │   │       │   └───java
+    │   │       │       └───main
+    │   │       └───headers
+    │   │           └───java
+    │   │               └───main
+    │   ├───resources
+    │   │   └───main
+    │   └───tmp
+    │       └───compileJava
+    ├───gradle
+    │   └───wrapper
+    └───src
+        ├───main
+        │   ├───java
+        │   │   └───be
+        │   │       └───ecam
+        │   │           └───ms_studenthelp
+        │   │               ├───Database
+        │   │               │   └───mysql
+        │   │               │       └───MySqlSerializer
+        │   │               ├───Interfaces
+        │   │               ├───Object
+        │   │               └───utils
+        │   └───resources
+        └───test
+            └───java
+                └───be
+                    └───ecam
+                        └───ms_studenthelp
+```
+
+## Project Context
+As part of the Architecture and Software Quality course, we have to design a fullstack school management application. 
+
+## Assigned Task
+In such a way, our team will focus on the student support platform.
 
 ## Installation
 
@@ -13,7 +101,6 @@ Student support platform <br />
 - - you may want to install phpmyadmin
 - install java jdk
 - install mysql java connector
-
 
 ### common
 - Copy the repo
