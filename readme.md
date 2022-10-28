@@ -1,24 +1,85 @@
 # Micro Service Student Help
 ## :deciduous_tree: Tree Structure
 ```
-src
-├───main
-│   ├───java
-│   │   └───be
-│   │       └───ecam
-│   │           └───ms_studenthelp
-│   │               ├───Database
-│   │               │   └───mysql
-│   │               │       └───MySqlSerializer
-│   │               ├───Interfaces
-│   │               ├───Object
-│   │               └───utils
-│   └───resources
-└───test
-    └───java
-        └───be
-            └───ecam
-                └───ms_studenthelp
+└───ms_studenthelp
+    ├───.gradle
+    │   ├───7.2
+    │   │   ├───dependencies-accessors
+    │   │   ├───executionHistory
+    │   │   ├───fileChanges
+    │   │   ├───fileHashes
+    │   │   └───vcsMetadata-1
+    │   ├───7.5.1
+    │   │   ├───checksums
+    │   │   ├───dependencies-accessors
+    │   │   ├───executionHistory
+    │   │   ├───fileChanges
+    │   │   ├───fileHashes
+    │   │   └───vcsMetadata
+    │   ├───buildOutputCleanup
+    │   ├───checksums
+    │   └───vcs-1
+    ├───.settings
+    ├───bin
+    │   ├───main
+    │   │   └───be
+    │   │       └───ecam
+    │   │           └───ms_studenthelp
+    │   │               ├───Database
+    │   │               │   └───mysql
+    │   │               │       └───MySqlSerializer
+    │   │               ├───Interfaces
+    │   │               ├───Object
+    │   │               └───utils
+    │   └───test
+    │       └───be
+    │           └───ecam
+    │               └───ms_studenthelp
+    ├───build
+    │   ├───classes
+    │   │   └───java
+    │   │       └───main
+    │   │           └───be
+    │   │               └───ecam
+    │   │                   └───ms_studenthelp
+    │   │                       ├───Database
+    │   │                       │   └───mysql
+    │   │                       │       └───MySqlSerializer
+    │   │                       ├───Interfaces
+    │   │                       ├───Object
+    │   │                       └───utils
+    │   ├───generated
+    │   │   └───sources
+    │   │       ├───annotationProcessor
+    │   │       │   └───java
+    │   │       │       └───main
+    │   │       └───headers
+    │   │           └───java
+    │   │               └───main
+    │   ├───resources
+    │   │   └───main
+    │   └───tmp
+    │       └───compileJava
+    ├───gradle
+    │   └───wrapper
+    └───src
+        ├───main
+        │   ├───java
+        │   │   └───be
+        │   │       └───ecam
+        │   │           └───ms_studenthelp
+        │   │               ├───Database
+        │   │               │   └───mysql
+        │   │               │       └───MySqlSerializer
+        │   │               ├───Interfaces
+        │   │               ├───Object
+        │   │               └───utils
+        │   └───resources
+        └───test
+            └───java
+                └───be
+                    └───ecam
+                        └───ms_studenthelp
 ```
 
 ## Project Context
@@ -41,7 +102,11 @@ We suggest you to go on these websites to get more informations about API :
 
 The service is also using a MySQL/MariaDB database, so you should have a good understanding of relational database.  
 Also, to increase flexibility and portability we used Docker to contain and launch our service on several devices. To get more explanations about Docker, we suggest you to read this documentation :  
-- [Docker](https://codefresh.io/docs/docs/learn-by-example/java/gradle/?fbclid=IwAR0Ty11lyrUBfOAR9flhZWoXSulKcOi1rNsyMq9tJOPKiVWQMVPH8ZmejwE)
+- [Docker](https://codefresh.io/docs/docs/learn-by-example/java/gradle/?fbclid=IwAR0Ty11lyrUBfOAR9flhZWoXSulKcOi1rNsyMq9tJOPKiVWQMVPH8ZmejwE)  
+
+This microservice is using the framework Spring Boot.  
+Spring Boot is an open source Java-based framework used to create a micro Service. It is developed by Pivotal Team and is used to build stand-alone and production ready spring applications. This chapter will give you an introduction to Spring Boot and familiarizes you with its basic concepts.  
+- [Spring Boot Documentation](https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm#:~:text=Spring%20Boot%20is%20an%20open,you%20with%20its%20basic%20concepts.)  
 
 
 ## Installation
@@ -50,7 +115,12 @@ Also, to increase flexibility and portability we used Docker to contain and laun
 
 ### Launching
 
-"Explain how to launch the service with Docker"
+"Explain how to launch the service with Docker"  
+
+
+## Getting Started
+
+
 
 ## API
 
@@ -71,6 +141,8 @@ You can change the credentials manually by changing `dummy` and `1234` in these 
 
 ## Diagram
 ### Database
+
+
 ![](ms_studenthelp.png)
 
 
