@@ -63,7 +63,7 @@ Uses a MySQL/MariaDB database.
 
 The schema is available in [`ms_studenthelp.sql`](ms_studenthelp.sql)
 
-The credentials are in the following file : [Application.Properties](.\ms_studenthelp\src\main\resources\application.properties)
+The credentials are in the following file : [Application.Properties](/RISE-student-help/ms_studenthelp/src/main/resources/application.properties)
 
 You can change the credentials manually by changing `dummy` and `1234` in these lines : 
 - spring.datasource.username=`dummy`  
