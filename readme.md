@@ -1,93 +1,48 @@
 # Micro Service Student Help
-## (Put a tree emoji here) Tree Structure
+## :deciduous_tree: Tree Structure
 ```
-├───.idea
-└───ms_studenthelp
-    ├───.gradle
-    │   ├───7.2
-    │   │   ├───dependencies-accessors
-    │   │   ├───executionHistory
-    │   │   ├───fileChanges
-    │   │   ├───fileHashes
-    │   │   └───vcsMetadata-1
-    │   ├───7.5.1
-    │   │   ├───checksums
-    │   │   ├───dependencies-accessors
-    │   │   ├───executionHistory
-    │   │   ├───fileChanges
-    │   │   ├───fileHashes
-    │   │   └───vcsMetadata
-    │   ├───buildOutputCleanup
-    │   ├───checksums
-    │   └───vcs-1
-    ├───.settings
-    ├───bin
-    │   ├───main
-    │   │   └───be
-    │   │       └───ecam
-    │   │           └───ms_studenthelp
-    │   │               ├───Database
-    │   │               │   └───mysql
-    │   │               │       └───MySqlSerializer
-    │   │               ├───Interfaces
-    │   │               ├───Object
-    │   │               └───utils
-    │   └───test
-    │       └───be
-    │           └───ecam
-    │               └───ms_studenthelp
-    ├───build
-    │   ├───classes
-    │   │   └───java
-    │   │       └───main
-    │   │           └───be
-    │   │               └───ecam
-    │   │                   └───ms_studenthelp
-    │   │                       ├───Database
-    │   │                       │   └───mysql
-    │   │                       │       └───MySqlSerializer
-    │   │                       ├───Interfaces
-    │   │                       ├───Object
-    │   │                       └───utils
-    │   ├───generated
-    │   │   └───sources
-    │   │       ├───annotationProcessor
-    │   │       │   └───java
-    │   │       │       └───main
-    │   │       └───headers
-    │   │           └───java
-    │   │               └───main
-    │   ├───resources
-    │   │   └───main
-    │   └───tmp
-    │       └───compileJava
-    ├───gradle
-    │   └───wrapper
-    └───src
-        ├───main
-        │   ├───java
-        │   │   └───be
-        │   │       └───ecam
-        │   │           └───ms_studenthelp
-        │   │               ├───Database
-        │   │               │   └───mysql
-        │   │               │       └───MySqlSerializer
-        │   │               ├───Interfaces
-        │   │               ├───Object
-        │   │               └───utils
-        │   └───resources
-        └───test
-            └───java
-                └───be
-                    └───ecam
-                        └───ms_studenthelp
+src
+├───main
+│   ├───java
+│   │   └───be
+│   │       └───ecam
+│   │           └───ms_studenthelp
+│   │               ├───Database
+│   │               │   └───mysql
+│   │               │       └───MySqlSerializer
+│   │               ├───Interfaces
+│   │               ├───Object
+│   │               └───utils
+│   └───resources
+└───test
+    └───java
+        └───be
+            └───ecam
+                └───ms_studenthelp
 ```
 
 ## Project Context
-As part of the Architecture and Software Quality course, we have to design a fullstack school management application. 
+In a perspective to develop and modify a Remote-Intranet-School-Environment, we have to design a school support microservice called 'Student Help'.
+More specifically, this repository is dedicated to the backend of 'Student Help'.  
+This microservice must be able to accomplish some specific actions. 
+In a such purpose it should be able to allow the users to :
+- Make and publish a 'post'.
+- Get a specific post, update or delete it.
+- React to 'posts' and comment ( answer) them.
+- Create a thread and update or delete it.
 
-## Assigned Task
-In such a way, our team will focus on the student support platform.
+
+
+## Prerequisite
+This service is using an API (Application Programming Interface).  
+We suggest you to go on these websites to get more informations about API :
+- [API](https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces)
+- [API French Link](https://www.mulesoft.com/fr/resources/api/what-is-an-api#:~:text=API%20est%20l'acronyme%20d,applications%20de%20communiquer%20entre%20elles)
+
+The service is also using a MySQL/MariaDB database, so you should have a good understanding of relational database.  
+Also, to increase flexibility and portability we used Docker to contain and launch our service on several devices. To get more explanations about Docker, we suggest you to read this documentation :  
+- [Docker](https://codefresh.io/docs/docs/learn-by-example/java/gradle/?fbclid=IwAR0Ty11lyrUBfOAR9flhZWoXSulKcOi1rNsyMq9tJOPKiVWQMVPH8ZmejwE)
+
 
 ## Installation
 
