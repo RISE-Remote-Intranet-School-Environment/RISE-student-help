@@ -46,29 +46,16 @@ Also, to increase flexibility and portability we used Docker to contain and laun
 
 ## Installation
 
-### Windows
-- make sur to have wamp installed (or a mysql server)
-- install the java jdk
-- you may need to install mysql connectorJ and add it to your PATH ( System(Control Panel) => Advanced system settings => Environment Variables => New System Variable => [value of the PATH])
+"Explain the installation with Docker"
 
-### Linux
-- install mysql
-- - you may want to install phpmyadmin
-- install java jdk
-- install mysql java connector
+### Launching
 
-### common
-- Copy the repo
-- Create a database:
-- - Name : `ms_studenthelp`
-- - Import : `ms_studenthelp.sql`
-
-- Create a mysql user named `dummy` with password `1234` , grant him data acces on `ms_studenthelp`
+"Explain how to launch the service with Docker"
 
 ## API
 
 Our OpenAPI schema is in [`schema.yaml`](schema.yaml).
-It also has a generated doc available at https://beta.bachelay.eu/ms-studentHelp
+It also has a generated doc available at this link [API online documentation](https://beta.bachelay.eu/ms-studentHelp)
 
 ## Database
 
@@ -76,11 +63,11 @@ Uses a MySQL/MariaDB database.
 
 The schema is available in [`ms_studenthelp.sql`](ms_studenthelp.sql)
 
-The database credentials are curently hardcoded in [`ms_studenthelp/src/main/java/be/ecam/ms_studenthelp/Database/mysql/MySqlDatabase.java`](ms_studenthelp/src/main/java/be/ecam/ms_studenthelp/Database/mysql/MySqlDatabase.java)
+The credentials are in the following file : [Application.Properties](.\ms_studenthelp\src\main\resources\application.properties)
 
-- server on `localhost`
-- database named `ms_studenthelp`
-- username `dummy` with password `1234`
+You can change the credentials manually by changing `dummy` and `1234` in these lines : 
+- spring.datasource.username=`dummy`  
+- spring.datasource.password=`1234`
 
 ## Diagram
 ### Database
