@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp;
+package be.ecam.ms_studenthelp.ThreadUnitTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ class UnitTestThreadsDeleteContent {
 
 	@Test
 	public void unitTestThreadsDeleteContent() throws Exception {
-		String id = CreateThreadTest.createThreadTest(mockMvc, port);
+		String id = CreateThreadTestForThreads.createThreadTestForThreads(mockMvc, port);
 
 		this.mockMvc.perform(delete("http://localhost:" + port + "/threads/" + id))
 				.andExpect(status().isOk());
