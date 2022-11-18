@@ -18,14 +18,13 @@ public class CreateThreadTest {
         String json = "{\"title\":\"Test thread\",\"category\":\"Math\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8c-2271-4afb-a348-e370effff\",\"content\":\"Fisrt postman\"}}";
 
         MvcResult result = mockMvc.perform(post("http://localhost:" + port + "/threads/")
-                        .content(json)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON))
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
 
         MockHttpServletResponse response = result.getResponse();
-
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String, Object> idResponse = springParser.parseMap(response.getContentAsString());
         return (String) idResponse.get("id");
