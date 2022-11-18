@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp;
+package be.ecam.ms_studenthelp.ThreadUnitTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class UnitTestThreadsUpdateContent {
 
     @Test
     public void unitTestThreadsUpdateContent() throws Exception {
-        String id = CreateThreadTest.createThreadTest(mockMvc, port);
+        String id = CreateThreadTestForThreads.createThreadTestForThreads(mockMvc, port);
 
         String json = "{\"title\":\"Test Update\",\"category\":\"Math\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8eac-2271-4afb-a348-e370effff\",\"content\":\"Fist Post\"}}";
         this.mockMvc.perform((patch("http://localhost:" + port + "/threads/" + id)
