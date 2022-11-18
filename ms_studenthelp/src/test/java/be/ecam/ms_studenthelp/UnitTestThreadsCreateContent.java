@@ -21,7 +21,6 @@ class UnitTestThreadsCreateContent {
 
     @Test
     public void unitTestThreadsCreateContent() throws Exception {
-
         String id = CreateThreadTest.createThreadTest(mockMvc, port);
 
         this.mockMvc.perform(get("http://localhost:" + port + "/threads/" + id))

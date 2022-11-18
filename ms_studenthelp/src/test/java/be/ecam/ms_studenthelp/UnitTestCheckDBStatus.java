@@ -22,7 +22,6 @@ class UnitTestCheckDBStatus {
     public void unitTestCheckDBStatus() throws Exception {
         this.mockMvc.perform(get("http://localhost:" + port + "/categories"))
                 .andExpect(status().isOk());
-
     }
 }
 
