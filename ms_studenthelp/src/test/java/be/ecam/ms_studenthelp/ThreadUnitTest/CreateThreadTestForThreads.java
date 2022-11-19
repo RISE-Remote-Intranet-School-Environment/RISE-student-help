@@ -27,7 +27,6 @@ public class CreateThreadTestForThreads {
         MockHttpServletResponse response = result.getResponse();
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String, Object> idResponse = springParser.parseMap(response.getContentAsString());
-        System.out.println(idResponse);
         return (String) idResponse.get("id");
     }
 }
