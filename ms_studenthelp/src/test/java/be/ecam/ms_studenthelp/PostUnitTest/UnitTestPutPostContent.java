@@ -42,13 +42,11 @@ class UnitTestPutPostContent {
         MockHttpServletResponse response = result.getResponse();
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String, Object> idResponse = springParser.parseMap(response.getContentAsString());
-        System.out.println(idResponse);
         String replyFirstPost = (String) idResponse.get("id");
 
         this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + replyFirstPost))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.content", is("Reply to first post")))
-                .andDo(print());
+                .andExpect(jsonPath("$.content", is("Reply to first post")));
     }
 }
 
