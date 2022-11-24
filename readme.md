@@ -1,5 +1,27 @@
 # Micro Service Student Help
 
+# Table of contents
+
+* [About the project](#❓-about-the-project)
+  * [Thread](#thread)
+  * [Post](#post)
+* [Getting started](#🚀-getting-started)
+  * [Frameworks](#⚡-frameworks)
+  * [Prerequesites](#❗-prerequesites)
+  * [Set up the database](#📚-setup-the-database)
+  * [Installation](#🔨-installation)
+    * [Setup with Docker (Recommended)](#🐳-setup-with-docker-recommended)
+    * [Setup with Gradle](#🐘-setup-with-gradle)
+  * [Run](#🏃-run)
+    * [Run with Docker (Recommended)](#🐳-run-with-docker-recommended)
+    * [Run with Gradle](#🐘-run-with-gradle)
+  * [Run tests](#🎲-run-tests)
+* [Tree structure](#🌳-tree-structure)
+* [API](#💥-api)
+* [Database](#📚-database)
+* [Acknowledgments](#📝-acknowledgments)
+* [License](#🔒-license)
+
 ## :question: About the project
 
 The purpose of this project is to help student during their studies. Every student is able to ask a question about a topic of a specific course, that's what we call a `thread`. Also, student are able to answer to question asked by others, that's what we call a `post`.
