@@ -5,7 +5,7 @@
 .vscode
 .vs
 .idea
-ms_stutendhelp/.settings/org.eclipse.buildship.core.prefs
+.settings/
 
 ### Java ###
 # Compiled class file
