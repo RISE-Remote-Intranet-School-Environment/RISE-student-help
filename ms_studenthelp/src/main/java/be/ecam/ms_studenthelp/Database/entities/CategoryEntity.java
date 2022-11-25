@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "categories")
 public class CategoryEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", unique = true)
     private long id;
 

@@ -15,4 +15,5 @@ public interface CategoryRepository extends CrudRepository<CategoryEntity, Long>
     @NotNull Optional<CategoryEntity> findById(@NonNull long id);
     @NotNull Optional<CategoryEntity> findByTitle(@NonNull String title);
     boolean existsByTitle(@NonNull String title);
+    void deleteAllByTitle(@NonNull String title);
 }
