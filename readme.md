@@ -68,7 +68,7 @@ This step is optional, if you don't want to use the [gradlew](ms_studenthelp\gra
 
 Before to launch the application, you must create your database. For that, use the [MySQL database script][database-script]. If you run this file in MySQL Workbench, it will automatically create the database with all its tables.
 
-When the database is set on your server, you must configure the database informations so that the application can connect to it. The configurations must be set in the [configuration file][configuration-file].
+When the database is set on your server, you must configure the database informations so that the application can connect to it. The configurations must be put in the folder [ressource][configuration-folder] with the name `application.properties`.
 
 You must specify the following parameters:
 
@@ -91,6 +91,7 @@ spring.datasource.username = <database-username>
 spring.datasource.password = <database-password>
 spring.datasource.driver-class-name = com.mysql.jdbc.Driver
 spring.application.name = <application-name>
+server.error.include-message=always
 ```
 
 Here is an example of configuration :
@@ -103,6 +104,7 @@ spring.datasource.username = dummy
 spring.datasource.password = 1234
 spring.datasource.driver-class-name = com.mysql.jdbc.Driver
 spring.application.name = demoservice
+server.error.include-message=always
 ```
 
 ### :hammer: Installation
@@ -265,7 +267,7 @@ Here is the database relational diagram used in the project.
 Distributed under the AGPL-3.0 License. See [LICENSE.md][license] for more information.
 
 <!-- Internal file links -->
-[configuration-file]: ./ms_studenthelp\src\main\resources\application.properties
+[configuration-folder]: ./ms_studenthelp/src/main/resources/
 [open-api-schema]: ./schema.yaml
 [database-diagram]: ./ms_studenthelp.png
 [license]: ./LICENSE.md
