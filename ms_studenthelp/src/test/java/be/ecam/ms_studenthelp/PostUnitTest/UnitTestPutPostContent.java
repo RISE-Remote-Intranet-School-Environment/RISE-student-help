@@ -16,7 +16,6 @@ import java.util.Map;
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -30,10 +29,10 @@ class UnitTestPutPostContent {
 
     @Test
     public void unitTestPutPostContent() throws Exception {
-        String firstPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
+        String IdPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
 
         String json = "{\"content\":\"Reply to first post\",\"authorId\":\"d66b3f8c-2271-4afb-a348-e370ef9990\"}";
-        MvcResult result = this.mockMvc.perform((put("http://localhost:" + port + "/posts/" + firstPost + "/answers")
+        MvcResult result = this.mockMvc.perform((put("http://localhost:" + port + "/posts/" + IdPost + "/answers")
                 .content(json)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)))
