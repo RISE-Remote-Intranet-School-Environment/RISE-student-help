@@ -24,15 +24,15 @@ class UnitTestPatchPostContent {
 
     @Test
     public void unitTestPatchPostContent() throws Exception {
-        String firstPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
+        String IdPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
 
         String json = "{\"content\":\"Update\",\"authorId\":\"d66b3f8c-2271-4afb-a348-e370ef9990\"}";
-        this.mockMvc.perform((patch("http://localhost:" + port + "/posts/" + firstPost)
+        this.mockMvc.perform((patch("http://localhost:" + port + "/posts/" + IdPost)
                 .content(json)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)));
 
-        this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + firstPost))
+        this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + IdPost))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content", is("Update")));
     }

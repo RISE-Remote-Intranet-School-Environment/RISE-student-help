@@ -21,9 +21,9 @@ class UnitTestGetPostContent {
 
     @Test
     public void unitTestGetPostContent() throws Exception {
-        String firstPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
+        String IdPost = CreateThreadTestForPosts.createThreadTestForPosts(mockMvc, port);
 
-        this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + firstPost))
+        this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + IdPost))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content", is("Test post")));
     }
