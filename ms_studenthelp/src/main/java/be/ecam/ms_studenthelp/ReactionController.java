@@ -23,12 +23,20 @@ import be.ecam.ms_studenthelp.Object.Reaction;
 
 @RestController
 public class ReactionController {
+    /**
+     * Class that manage the API reaction.
+     */
     @Autowired private ReactionRepository reactionRepository;
     @Autowired private PostRepository postRepository;
     @Autowired private AuthorRepository authorRepository;
 
+    /**
+     * Get the reaction of a post by its ID.
+     * @param postId ID of the post to get the reactions.
+     * @return Set with the reactions linked to the post.
+     */
 	@GetMapping("/posts/{postId}/reactions")
-	public Set<Reaction> getPostsPostIdReactions(@PathVariable("postId") String postId, HttpServletResponse resp) {
+	public Set<Reaction> getPostsPostIdReactions(@PathVariable("postId") String postId) {
         PostEntity postEntity = DatabaseUtils.getPostFromDatabase(postId, postRepository);
         Set<ReactionEntity> reactionEntities = postEntity.getReactions();
 
@@ -39,8 +47,19 @@ public class ReactionController {
                 .collect(Collectors.toSet());
 	}
 
+    /**
+     * Add/Update a reaction to the post specified by its ID.
+     * @param postId ID of the post to add/update a reaction
+     * @param body   Body passed to the request in JSON format.
+     *               {
+     *                  "value": <value>,
+     *                  "authorId": "<authorId>"
+     *               }
+     * @return Reaction added/updated.
+     */
 	@PutMapping("/posts/{postId}/reactions")
-	public Reaction putPostsPostIdReactions(@PathVariable("postId") String postId, @RequestBody String body, HttpServletResponse resp) {
+	public Reaction putPostsPostIdReactions(@PathVariable("postId") String postId,
+                                            @RequestBody String body) {
         PostEntity postEntity = DatabaseUtils.getPostFromDatabase(postId, postRepository);
         ReactionBody reactionBody = new ReactionBody(body);
 
@@ -73,6 +92,11 @@ public class ReactionController {
         return reactionEntity.toReaction();
 	}
 
+    /**
+     * Delete all reactions of a post specified by its ID.
+     * @param postId ID of the post to delete the reaction.
+     * @return Post where the reaction has been deleted.
+     */
 	@DeleteMapping("/posts/{postId}/reactions")
 	public IPost deletePostsPostIdReactions(@PathVariable("postId") String postId) {
         PostEntity postEntity = DatabaseUtils.getPostFromDatabase(postId, postRepository);

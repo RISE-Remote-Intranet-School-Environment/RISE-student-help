@@ -15,19 +15,28 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class CategoryController {
+	/**
+	 * Class that manage the API for the categories
+	 */
 	@Autowired
 	private CategoryRepository categoryRepository;
 
+	/**
+	 * GET path for the categories.
+	 * @return All the categories that exists.
+	 */
 	@GetMapping("/categories")
 	public List<String> getCategories() {
 		List<CategoryEntity> categories = categoryRepository.findAll();
 
-		return categories
-				.stream()
-				.map(CategoryEntity::getTitle)
-				.collect(Collectors.toList());
+		return categories.stream().map(CategoryEntity::getTitle).collect(Collectors.toList());
 	}
 
+	/**
+	 * POST request to create a category based on a body.
+	 * @param body Body contained in the POST request.
+	 * @return Category created.
+	 */
 	@PostMapping("/categories")
 	public Category createCategory(@RequestBody String body) {
 		CategoryBody categoryBody = CategoryBody.fromBody(body);
@@ -36,14 +45,18 @@ public class CategoryController {
 		// If the category is already on the database
 		if (categoryRepository.existsByTitle(categoryBody.getTitle())) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-					String.format("The category %s is already on the database",
-							categoryBody.getTitle()));
+					String.format("The category %s is already on the database", categoryBody.getTitle()));
 		}
 
 		categoryRepository.save(categoryEntity);
 		return categoryEntity.toCategory();
 	}
 
+	/**
+	 * Delete the specified category from the database.
+	 * @param category Category to delete.
+	 * @return Category that have been deleted.
+	 */
 	@DeleteMapping("/categories/{category}")
 	public Category deleteCategory(@PathVariable("category") String category) {
 		CategoryEntity categoryEntity = DatabaseUtils.getCategoryFromDatabase(category,

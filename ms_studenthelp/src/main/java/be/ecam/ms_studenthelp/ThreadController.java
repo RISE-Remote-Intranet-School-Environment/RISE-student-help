@@ -32,19 +32,23 @@ public class ThreadController {
     private @Autowired AuthorRepository authorRepository;
     private @Autowired TagRepository tagRepository;
 
+
     /**
-     * POST /threads
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/post-threads
-     * Create a new thread in a specific category and the post it contain. Return a IForumThread
-     * Parameters of the body :
-     * String title
-     * List<String> tags
-     * String category
-     * Boolean answered
-     * Map<String,String> first_post : to create the content of the Thread
+     * Create a thread with the parameters passed in the body.
+     * @param body Body passed to the request in JSON format.
+     *             {
+     *                  "title": "<threadTitle>",
+     *                  "category": "<category>",
+     *                  "tags": [],
+     *                  "firstPost": {
+     *                      "authorId": "<authorId>",
+     *                      "content": "<postContent>"
+     *                  }
+     *             }
+     * @return Thread that have been created.
      */
     @PostMapping("/threads")
-    public IForumThread PostThreads(@RequestBody String body){
+    public IForumThread PostThreads(@RequestBody String body) {
         ForumThreadBody forumThreadBody = new ForumThreadBody(body);
 
         // If title, tags or category is not specified, return a 3xx error
@@ -93,9 +97,9 @@ public class ThreadController {
     }
 
     /**
-     * GET /threads/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/get-threads-threadId
-     * Return an existing Thread from is threadID (String)
+     * Get a thread by its ID.
+     * @param threadId ID of the thread to get.
+     * @return Thread loaded from the database.
      */
     @GetMapping("/threads/{threadId}")
     public IForumThread getThreadsThreadId(@PathVariable("threadId") String threadId) {
@@ -104,10 +108,15 @@ public class ThreadController {
     }
 
     /**
-     * PATCH /threads/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/patch-threads-threadId
-     * Modify an existing Thread from its threadId and a body (where the modification are) and return it.
-     * It allows to modify the title, tags, category and/or answered of an existing thread.
+     * Update the content, title and tags of a thread specified by its ID.
+     * @param threadId ID of the thread to update.
+     * @param body     Body passed to the request in JSON format.
+     *                 {
+     *                      "title": "Updated thread",
+     *                      "category": "Electronics",
+     *                      "answered": true
+     *                 }
+     * @return Thread that have been updated.
      */
     @PatchMapping("/threads/{threadId}")
     public IForumThread patchThreadsThreadId(@PathVariable("threadId") String threadId, @RequestBody String body) {
@@ -143,9 +152,9 @@ public class ThreadController {
     }
 
     /**
-     * DELETE /threads/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/delete-threads
-     * Delete a Thread from is Id.
+     * Delete a thread specified by its ID.
+     * @param threadId ID of the thread to be deleted.
+     * @return Thread that have been deleted.
      */
     @DeleteMapping("/threads/{threadId}")
     public IForumThread DeleteForumThreadTitle(@PathVariable("threadId") String threadId) {
@@ -158,11 +167,9 @@ public class ThreadController {
     }
 
 
-
     /**
-     * GET /threads
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/get-threads
-     * Get a list of published threads
+     * Get all the threads that exists in the database.
+     * @return List with all the threads present in the database.
      */
     @GetMapping("/threads")
     public List<ForumThread> GetForumThreadPages() {
@@ -188,9 +195,9 @@ public class ThreadController {
 
 
     /**
-     * GET /threads/tags/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/get-tags
-     * Get a list of the tags linked to a specific thread
+     * Get the tags related to a thread specified by its ID.
+     * @param threadId ID of the thread to get the tags.
+     * @return List with the tags related to the thread.
      */
     @GetMapping("/threads/{threadId}/tags")
     public Set<Tag> getThreadsThreadIdTags(@PathVariable("threadId") String threadId) {
@@ -200,9 +207,13 @@ public class ThreadController {
 
 
     /**
-     * POST /threads/{Title}/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/post-tag
-     * Post a new tag to a specific thread
+     * Add a tags to a thread specified by its ID.
+     * @param threadId ID of the thread to add the tag.
+     * @param body Body passed to the request in JSON format.
+     *             {
+     *                  "tags": "tag"
+     *             }
+     * @return Tags contained by the thread ID.
      */
     @PostMapping("/threads/{threadId}/tags")
     public Set<Tag> postTagThreadId(@PathVariable("threadId") String threadId, @RequestBody String body) {
@@ -215,7 +226,6 @@ public class ThreadController {
 
             threadEntity.addTag(tagEntity);
             threadRepository.save(threadEntity);
-
         } else if (forumTagBody.getTag() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No tag mentioned !");
         }
@@ -225,24 +235,20 @@ public class ThreadController {
 
 
     /**
-     * DELETE /threads/{threadId}
-     * https://beta.bachelay.eu/ms-studentHelp/#/operations/delete-threads
-     * Delete a tag from a specific thread.
+     * Delete a thread by its title and thread ID.
+     * @param tagTitle Title of the tag to delete.
+     * @param threadId ID of the thread where delete the tags.
+     * @return Remaining tags of the threads.
      */
     @DeleteMapping("/threads/{threadId}/tags/{tagtitle}")
-    public Set<Tag> DeleteTagFromThread(@PathVariable("tagtitle") String tagtitle ,@PathVariable("threadId") String threadId) {
+    public Set<Tag> DeleteTagFromThread(@PathVariable("tagtitle") String tagTitle, @PathVariable("threadId") String threadId) {
 
         ThreadEntity threadEntity = DatabaseUtils.getForumThreadFromDatabase(threadId, threadRepository);
-        TagEntity tag = tagRepository.findByTitleAndThread(tagtitle, threadEntity);
+        TagEntity tag = tagRepository.findByTitleAndThread(tagTitle, threadEntity);
         tagRepository.deleteById(tag.getId());
 
         return threadEntity.toForumThread().getTags();
-
     }
-
-
-
-
 
     private static IPost postFromPostBody(@NonNull PostBody postBody) {
         if ((postBody.getContent() == null) || (postBody.getAuthorId() == null)) {

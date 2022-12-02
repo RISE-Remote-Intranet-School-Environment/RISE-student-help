@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import be.ecam.ms_studenthelp.Interfaces.IPost;
@@ -19,14 +18,16 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class PostController {
+    /**
+     * Post that manage the Post API.
+     */
     @Autowired private PostRepository postRepository;
     @Autowired private AuthorRepository authorRepository;
 
     /**
-     *  ENDPOINT GET post by postId
-     *
-     *  @param postId Id of the post to get
-     *  @return and {@link IPost}
+     *  Get post by its ID.
+     *  @param postId ID of the post to get.
+     *  @return Post corresponding to the ID.
      */
     @GetMapping(value = "/posts/{postId}", produces="application/json")
     public IPost GetPostByPostId(@PathVariable("postId") String postId) {
@@ -35,14 +36,18 @@ public class PostController {
 
 
     /**
-     * ENDPOINT PATCH to modify content of a post
-     *
-     * @param postId Id of the post to modify
-     * @param body objet post in JSON or just a JSON like {"content": "also works"}
-     * @return and {@link IPost}
+     * Patch request to update the content of a post.
+     * @param postId ID of the post to update.
+     * @param body Body passed to the request in a JSON format.
+     *             {
+     *                  "content": "<newContent>",
+     *                  "authorId": "<authorId>"
+     *             }
+     * @return Post with the content updated.
      */
     @PatchMapping(value = "/posts/{postId}", produces="application/json")
-    public IPost PatchPostByPostId(@PathVariable("postId") String postId, @RequestBody String body) {
+    public IPost PatchPostByPostId(@PathVariable("postId") String postId,
+                                   @RequestBody String body) {
         PostEntity postEntity = DatabaseUtils.getPostFromDatabase(postId, postRepository);
         PostBody postBody = new PostBody(body);
 
@@ -59,11 +64,14 @@ public class PostController {
     }
 
     /**
-     *  method to reply to a post
-     *
-     * @param postId Id of an existing post
-     * @param body  The reply post with necessary fields to create a post
-     * @return and {@link IPost}
+     *  Put request to answer to a post by its ID.
+     * @param postId ID of the post to answer.
+     * @param body  Body sent to the request in JSON format.
+     *              {
+     *                  "content": "<childContent>",
+     *                  "authorId": "<authorId>"
+     *              }
+     * @return Child that have been created.
      */
     @PutMapping(value = "/posts/{postId}/answers", produces="application/json")
     public IPost ReplyPostByPostId(@PathVariable("postId") String postId, @RequestBody String body) {
@@ -76,9 +84,6 @@ public class PostController {
                     "Content and authorId must be passed !");
         }
 
-        // Get the author if it exists, otherwise create a new one
-        Optional<AuthorEntity>optionalAuthorEntity = authorRepository.findById(
-                postBody.getAuthorId());
         AuthorEntity authorEntity = DatabaseUtils.getAuthorFromDatabase(
                 postBody.getAuthorId(), authorRepository);
         PostEntity childPostEntity = new PostEntity(postBody.getContent(), authorEntity);
@@ -93,10 +98,9 @@ public class PostController {
     }
 
     /**
-     * Delete a post
-     *
-     * @param postId
-     * @return
+     * Delete a post by its ID.
+     * @param postId ID of the post to delete.
+     * @return Post that have been deleted.
      */
     @DeleteMapping(value = "/posts/{postId}", produces = "application/json")
     public IPost deletePostByPostId(@PathVariable("postId") String postId) {
@@ -113,6 +117,10 @@ public class PostController {
         return postEntity.toPost();
     }
 
+    /**
+     * Get all the post that exists in the databases.
+     * @return List with the post that are in the database.
+     */
     @GetMapping(value = "/posts", produces = "application/json")
     public List<IPost> getAllPosts() {
         List<PostEntity> postEntities = postRepository.findAll();
