@@ -7,25 +7,31 @@ import org.springframework.lang.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-    Class used to store the content of the body for a Post
+/**
+ * Body for a post received in an API request.
  */
 public class PostBody {
-    @Nullable private String authorId;
-    @Nullable private String content;
+    @Nullable private final String authorId;
+    @Nullable private final String content;
 
+    /**
+     * Constructor from its parameters.
+     * @param authorId Author ID of the post owner.
+     * @param content Content of the post.
+     */
     public PostBody(@Nullable String authorId, @Nullable String content) {
         this.authorId = authorId;
         this.content = content;
     }
 
-    /*
-        Constructor from a string body.
+    /**
+        Constructor from a body received by the API.
         Example:
             {
                 "authorId": "d66b3f8c-2271-4afb-a348-e370ef9990",
                 "content": "Post test"
             }
+        @param body Body received by the API.
      */
     public PostBody(String body) {
         JsonParser springParser = JsonParserFactory.getJsonParser();
@@ -35,15 +41,27 @@ public class PostBody {
         content = body_data.get("content").toString();
     }
 
+    /**
+     * Constructor from a HashMap with the corresponding parameters.
+     * @param body Body received by the API in HashMap.
+     */
     public PostBody(HashMap<String, String> body) {
-        authorId = body.get("authorId").toString();
-        content = body.get("content").toString();
+        authorId = body.get("authorId");
+        content = body.get("content");
     }
 
+    /**
+     * Getter for the Author ID.
+     * @return Author ID.
+     */
     public @Nullable String getAuthorId() {
         return authorId;
     }
 
+    /**
+     * Getter for the content of the post.
+     * @return Content of the post.
+     */
     public @Nullable String getContent() {
         return content;
     }

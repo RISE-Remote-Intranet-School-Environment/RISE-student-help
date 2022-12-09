@@ -1,6 +1,5 @@
 package be.ecam.ms_studenthelp.utils;
 
-import be.ecam.ms_studenthelp.Object.Reaction;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
@@ -8,15 +7,31 @@ import org.springframework.lang.NonNull;
 
 import java.util.Map;
 
+/**
+ * Body for a reaction received in an API request.
+ */
 public class ReactionBody {
-    private @Nullable Integer value;
-    private @Nullable String authorId;
+    private @Nullable final Integer value;
+    private @Nullable final String authorId;
 
+    /**
+     * Constructor from its parameters.
+     * @param value Value for the reaction.
+     * @param authorId ID of the author of the reaction.
+     */
     public ReactionBody(int value, @Nullable String authorId) {
         this.value = value;
         this.authorId = authorId;
     }
 
+    /**
+     * Constructor from a body to parse.
+     * {
+     *      "value": 1,
+     *      "authorId": "<authorId>"
+     * }
+     * @param body Body received by the API.
+     */
     public ReactionBody(@NonNull String body) {
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String,Object> body_data = springParser.parseMap(body);
@@ -25,10 +40,18 @@ public class ReactionBody {
         authorId = (String) body_data.get("authorId");
     }
 
+    /**
+     * Get the value of the reaction.
+     * @return Value of the reaction.
+     */
     public @Nullable Integer getValue() {
         return value;
     }
 
+    /**
+     * Get the author ID of the reaction.
+     * @return Author ID.
+     */
     public @Nullable String getAuthorId() {
         return authorId;
     }

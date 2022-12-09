@@ -10,15 +10,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Body for a tag received in an API request.
+ */
 public class ForumTagBody {
+    private @Nullable final String tag;
 
-    private @Nullable String tag;
-
-
+    /**
+     * Constructor from the tag.
+     * @param tag Title of the tag.
+     */
     public ForumTagBody(@Nullable String tag) {
         this.tag = tag;
 
     }
+
+    /**
+     * Constructor from the body received by the API.
+     * @param body Body received from the API.
+     * @return A tag body.
+     */
     public static ForumTagBody fromBody(String body) {
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String,Object> body_data = springParser.parseMap(body);
@@ -26,6 +37,10 @@ public class ForumTagBody {
         return new ForumTagBody((String) body_data.get("tag"));
     }
 
+    /**
+     * Getter for the tag title.
+     * @return Tag title.
+     */
     public @Nullable String getTag(){
         return tag;
     }
