@@ -26,10 +26,6 @@ public class ReactionBody {
 
     /**
      * Constructor from a body to parse.
-     * {
-     *      "value": 1,
-     *      "authorId": "<authorId>"
-     * }
      * @param body Body received by the API.
      */
     public ReactionBody(@NonNull String body) {
