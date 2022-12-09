@@ -8,16 +8,34 @@ import org.springframework.boot.jackson.JsonComponent;
 
 import java.io.IOException;
 
+/**
+ * Class that create a custom JSON representation of a thread
+ */
 @JsonComponent
 public class ForumThreadJsonSerializer extends JsonSerializer<ForumThread> {
+    /**
+     * Default constructor.
+     */
     public ForumThreadJsonSerializer() {
         this(null);
     }
 
+    /**
+     * Constructor by the JSON serial. Used internally by the JSON Serializer package.
+     * @param t ForumThread class.
+     */
     public ForumThreadJsonSerializer(Class<ForumThread> t) {
         super();
     }
 
+    /**
+     * Function where we declare the JSON output.
+     * @param value Value to serialize; can <b>not</b> be null.
+     * @param gen Generator used to output resulting Json content
+     * @param provider Provider that can be used to get serializers for
+     *   serializing Objects value contains, if any.
+     * @throws IOException Generate if we cannot parse a field.
+     */
     @Override
     public void serialize(ForumThread value, JsonGenerator gen, SerializerProvider provider) throws IOException {
         gen.writeStartObject();

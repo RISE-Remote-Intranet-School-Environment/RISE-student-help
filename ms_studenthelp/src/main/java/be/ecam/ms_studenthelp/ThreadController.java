@@ -77,8 +77,8 @@ public class ThreadController {
                 authorRepository);
         PostEntity postEntity = new PostEntity(
                 firstPost.getContent(),
-                firstPost.getUpvotes(),
-                firstPost.getDownvotes(),
+                firstPost.getUpVotes(),
+                firstPost.getDownVotes(),
                 firstPost.getDatePosted(),
                 firstPost.getDateModified(),
                 null, // No child when the thread is created
