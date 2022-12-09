@@ -25,13 +25,8 @@ public class PostBody {
     }
 
     /**
-        Constructor from a body received by the API.
-        Example:
-            {
-                "authorId": "d66b3f8c-2271-4afb-a348-e370ef9990",
-                "content": "Post test"
-            }
-        @param body Body received by the API.
+     * Constructor from a body received by the API.
+     * @param body Body received by the API.
      */
     public PostBody(String body) {
         JsonParser springParser = JsonParserFactory.getJsonParser();

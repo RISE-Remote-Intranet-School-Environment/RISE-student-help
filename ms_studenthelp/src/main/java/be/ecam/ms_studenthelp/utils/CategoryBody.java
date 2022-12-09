@@ -1,6 +1,6 @@
 package be.ecam.ms_studenthelp.utils;
 
-import be.ecam.ms_studenthelp.Database.entities.CategoryEntity;
+import be.ecam.ms_studenthelp.Object.Category;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
 import org.springframework.lang.NonNull;
@@ -14,7 +14,7 @@ public class CategoryBody {
     private @NonNull String title;
 
     /**
-     * Constructor from the title of the category.
+     * Constructor from the title of the {@link Category}.
      * @param title Title of the category.
      */
     public CategoryBody(@NonNull String title) {
@@ -23,9 +23,6 @@ public class CategoryBody {
 
     /**
      * Constructor from a body received from the database.
-     *      {
-     *          "category": "Math"
-     *      }
      * @param body Body received from the API.
      */
     public static CategoryBody fromBody(@NonNull String body) {
@@ -36,7 +33,7 @@ public class CategoryBody {
     }
 
     /**
-     * Getter for the title of the category.
+     * Getter for the title of the {@link Category}.
      * @return Title of the category.
      */
     @NonNull
@@ -45,7 +42,7 @@ public class CategoryBody {
     }
 
     /**
-     * Set the title of the category.
+     * Set the title of the {@link Category}.
      * @param title New title for the category.
      */
     public void setTitle(@NonNull String title) {

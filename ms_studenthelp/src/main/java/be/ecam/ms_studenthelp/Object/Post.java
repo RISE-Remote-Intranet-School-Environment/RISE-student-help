@@ -21,7 +21,7 @@ public class Post implements IPost{
     @Nullable private IPost parent;
 
     /**
-     * Constructor. Usually used to get post from the database.
+     * Constructor. Usually used to get {@link Post} from the database.
      * @param id Post ID.
      * @param content Content of the post.
      * @param upVotes UpVotes of the post.
@@ -50,7 +50,7 @@ public class Post implements IPost{
     }
 
     /**
-     * Create a new post that is not stored in the database.
+     * Create a new {@link Post} that is not stored in the database.
      * @param content Post content.
      * @param author Author of the post.
      * @param parent Parent of the post.

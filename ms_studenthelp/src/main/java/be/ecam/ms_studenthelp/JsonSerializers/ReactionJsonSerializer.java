@@ -9,7 +9,7 @@ import org.springframework.boot.jackson.JsonComponent;
 import java.io.IOException;
 
 /**
- * Class that create a custom JSON representation of a reaction
+ * Class that create a custom JSON representation of a {@link Reaction}
  */
 @JsonComponent
 public class ReactionJsonSerializer extends JsonSerializer<Reaction> {

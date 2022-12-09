@@ -1,13 +1,10 @@
 package be.ecam.ms_studenthelp.utils;
 
+import be.ecam.ms_studenthelp.Object.Tag;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
-import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,7 +14,7 @@ public class ForumTagBody {
     private @Nullable final String tag;
 
     /**
-     * Constructor from the tag.
+     * Constructor from the {@link Tag}.
      * @param tag Title of the tag.
      */
     public ForumTagBody(@Nullable String tag) {
@@ -38,7 +35,7 @@ public class ForumTagBody {
     }
 
     /**
-     * Getter for the tag title.
+     * Getter for the {@link Tag} title.
      * @return Tag title.
      */
     public @Nullable String getTag(){

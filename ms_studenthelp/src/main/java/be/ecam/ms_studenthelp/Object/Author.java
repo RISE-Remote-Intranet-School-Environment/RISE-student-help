@@ -10,7 +10,7 @@ public class Author {
     private final String id;
 
     /**
-     * Construct author by its ID.
+     * Construct {@link Author} by its ID.
      * @param id Author ID.
      */
     public Author(@NonNull String id) {

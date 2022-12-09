@@ -31,7 +31,7 @@ public class ReactionController {
     @Autowired private AuthorRepository authorRepository;
 
     /**
-     * Get the reaction of a post by its ID.
+     * Get the {@link Reaction} of a {@link IPost} by its ID.
      * @param postId ID of the post to get the reactions.
      * @return Set with the reactions linked to the post.
      */
@@ -48,13 +48,9 @@ public class ReactionController {
 	}
 
     /**
-     * Add/Update a reaction to the post specified by its ID.
+     * Add/Update a {@link Reaction} to the {@link IPost} specified by its ID.
      * @param postId ID of the post to add/update a reaction
      * @param body   Body passed to the request in JSON format.
-     *               {
-     *                  "value": <value>,
-     *                  "authorId": "<authorId>"
-     *               }
      * @return Reaction added/updated.
      */
 	@PutMapping("/posts/{postId}/reactions")
@@ -93,7 +89,7 @@ public class ReactionController {
 	}
 
     /**
-     * Delete all reactions of a post specified by its ID.
+     * Delete all {@link Reaction}'s of a {@link IPost} specified by its ID.
      * @param postId ID of the post to delete the reaction.
      * @return Post where the reaction has been deleted.
      */

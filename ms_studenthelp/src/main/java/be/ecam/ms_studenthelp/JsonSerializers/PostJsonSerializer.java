@@ -9,7 +9,7 @@ import org.springframework.boot.jackson.JsonComponent;
 import java.io.IOException;
 
 /**
- * Class that create a custom JSON representation of a post
+ * Class that create a custom JSON representation of a {@link Post}
  */
 @JsonComponent
 public class PostJsonSerializer extends JsonSerializer<Post> {

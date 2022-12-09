@@ -12,7 +12,7 @@ public class Category {
     private final String title;
 
     /**
-     * Constructor for the Category by its parameters.
+     * Constructor for the {@link Category} by its parameters.
      * @param id ID of the category in the database.
      * @param title Title of the category.
      */

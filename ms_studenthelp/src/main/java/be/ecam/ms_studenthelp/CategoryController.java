@@ -22,7 +22,7 @@ public class CategoryController {
 	private CategoryRepository categoryRepository;
 
 	/**
-	 * GET path for the categories.
+	 * GET path for the {@link Category}'s.
 	 * @return All the categories that exists.
 	 */
 	@GetMapping("/categories")
@@ -33,7 +33,7 @@ public class CategoryController {
 	}
 
 	/**
-	 * POST request to create a category based on a body.
+	 * POST request to create a {@link Category} based on a body.
 	 * @param body Body contained in the POST request.
 	 * @return Category created.
 	 */
@@ -53,7 +53,7 @@ public class CategoryController {
 	}
 
 	/**
-	 * Delete the specified category from the database.
+	 * Delete the specified {@link Category} from the database.
 	 * @param category Category to delete.
 	 * @return Category that have been deleted.
 	 */
@@ -67,4 +67,3 @@ public class CategoryController {
 		return categoryEntity.toCategory();
 	}
 }
-

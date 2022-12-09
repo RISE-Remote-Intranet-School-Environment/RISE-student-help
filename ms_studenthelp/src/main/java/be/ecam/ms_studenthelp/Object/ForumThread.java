@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.lang.NonNull;
 
 /**
- * Container for the thread informations.
+ * Container for the thread information.
  */
 public class ForumThread implements IForumThread {
     @NonNull private final String id;
@@ -52,7 +52,7 @@ public class ForumThread implements IForumThread {
     }
 
     /**
-     * Constructor for a new thread that is no stored in the database.
+     * Constructor for a new {@link ForumThread} that is not stored in the database.
      * @param title Thread title.
      * @param category Category of the thread.
      * @param firstPost First post of the thread.

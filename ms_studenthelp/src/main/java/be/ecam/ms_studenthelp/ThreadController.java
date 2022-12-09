@@ -34,17 +34,8 @@ public class ThreadController {
 
 
     /**
-     * Create a thread with the parameters passed in the body.
+     * Create a {@link ForumThread} with the parameters passed in the body.
      * @param body Body passed to the request in JSON format.
-     *             {
-     *                  "title": "<threadTitle>",
-     *                  "category": "<category>",
-     *                  "tags": [],
-     *                  "firstPost": {
-     *                      "authorId": "<authorId>",
-     *                      "content": "<postContent>"
-     *                  }
-     *             }
      * @return Thread that have been created.
      */
     @PostMapping("/threads")
@@ -83,6 +74,7 @@ public class ThreadController {
                 firstPost.getDateModified(),
                 null, // No child when the thread is created
                 authorEntity,
+                new HashSet<>(),
                 new HashSet<>()
         );
 
@@ -97,7 +89,7 @@ public class ThreadController {
     }
 
     /**
-     * Get a thread by its ID.
+     * Get a {@link ForumThread} by its ID.
      * @param threadId ID of the thread to get.
      * @return Thread loaded from the database.
      */
@@ -108,14 +100,9 @@ public class ThreadController {
     }
 
     /**
-     * Update the content, title and tags of a thread specified by its ID.
+     * Update the content, title and {@link Tag}'s of a {@link ForumThread} specified by its ID.
      * @param threadId ID of the thread to update.
-     * @param body     Body passed to the request in JSON format.
-     *                 {
-     *                      "title": "Updated thread",
-     *                      "category": "Electronics",
-     *                      "answered": true
-     *                 }
+     * @param body Body passed to the request in JSON format.
      * @return Thread that have been updated.
      */
     @PatchMapping("/threads/{threadId}")
@@ -152,7 +139,7 @@ public class ThreadController {
     }
 
     /**
-     * Delete a thread specified by its ID.
+     * Delete a {@link ForumThread} specified by its ID.
      * @param threadId ID of the thread to be deleted.
      * @return Thread that have been deleted.
      */
@@ -168,7 +155,7 @@ public class ThreadController {
 
 
     /**
-     * Get all the threads that exists in the database.
+     * Get all the {@link ForumThread} that exists in the database.
      * @return List with all the threads present in the database.
      */
     @GetMapping("/threads")
@@ -195,7 +182,7 @@ public class ThreadController {
 
 
     /**
-     * Get the tags related to a thread specified by its ID.
+     * Get the {@link Tag}'s related to a {@link ForumThread} specified by its ID.
      * @param threadId ID of the thread to get the tags.
      * @return List with the tags related to the thread.
      */
@@ -207,12 +194,9 @@ public class ThreadController {
 
 
     /**
-     * Add a tags to a thread specified by its ID.
+     * Add a {@link Tag}'s to a {@link ForumThread} specified by its ID.
      * @param threadId ID of the thread to add the tag.
      * @param body Body passed to the request in JSON format.
-     *             {
-     *                  "tags": "tag"
-     *             }
      * @return Tags contained by the thread ID.
      */
     @PostMapping("/threads/{threadId}/tags")
@@ -235,7 +219,7 @@ public class ThreadController {
 
 
     /**
-     * Delete a thread by its title and thread ID.
+     * Delete a {@link ForumThread} by its title and thread ID.
      * @param tagTitle Title of the tag to delete.
      * @param threadId ID of the thread where delete the tags.
      * @return Remaining tags of the threads.

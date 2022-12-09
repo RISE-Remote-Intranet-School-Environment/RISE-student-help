@@ -1,5 +1,9 @@
 package be.ecam.ms_studenthelp.utils;
 
+import be.ecam.ms_studenthelp.Object.Author;
+import be.ecam.ms_studenthelp.Object.Category;
+import be.ecam.ms_studenthelp.Object.ForumThread;
+import be.ecam.ms_studenthelp.Object.Post;
 import be.ecam.ms_studenthelp.Database.entities.AuthorEntity;
 import be.ecam.ms_studenthelp.Database.entities.CategoryEntity;
 import be.ecam.ms_studenthelp.Database.entities.PostEntity;
@@ -19,7 +23,7 @@ import java.util.Optional;
  */
 public class DatabaseUtils {
     /**
-     * Get a thread from the database by its ID.
+     * Get a {@link ForumThread} from the database by its ID.
      * @param threadId ID of the thread to get.
      * @param threadRepository Thread repository.
      * @return Thread entity associated.
@@ -38,7 +42,7 @@ public class DatabaseUtils {
     }
 
     /**
-     * Get post from the database by its ID.
+     * Get {@link Post} from the database by its ID.
      * @param postId ID of the post to get.
      * @param postRepository Post repository.
      * @return Post entity related.
@@ -56,7 +60,7 @@ public class DatabaseUtils {
     }
 
     /**
-     * Get category from the database by its title.
+     * Get {@link Category} from the database by its title.
      * @param category Title of the category.
      * @param categoryRepository Category repository.
      * @return Category entity related.
@@ -74,7 +78,7 @@ public class DatabaseUtils {
     }
 
     /**
-     * Get author from the database by its ID.
+     * Get {@link Author} from the database by its ID.
      * @param authorId ID of the author to get.
      * @param authorRepository Author repository.
      * @return Author entity related.

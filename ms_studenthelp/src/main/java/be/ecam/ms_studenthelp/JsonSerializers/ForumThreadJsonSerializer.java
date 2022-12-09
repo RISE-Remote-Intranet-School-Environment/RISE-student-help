@@ -9,7 +9,7 @@ import org.springframework.boot.jackson.JsonComponent;
 import java.io.IOException;
 
 /**
- * Class that create a custom JSON representation of a thread
+ * Class that create a custom JSON representation of a {@link ForumThread}
  */
 @JsonComponent
 public class ForumThreadJsonSerializer extends JsonSerializer<ForumThread> {

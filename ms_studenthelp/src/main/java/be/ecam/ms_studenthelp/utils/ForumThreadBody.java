@@ -1,11 +1,10 @@
 package be.ecam.ms_studenthelp.utils;
+import be.ecam.ms_studenthelp.Object.ForumThread;
 
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
-import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,17 +40,8 @@ public class ForumThreadBody {
     }
 
     /**
-        Constructor from a body received from the API.
-        Example:
-            {
-                "title": "Test thread",
-                "category": "Mathematics",
-                "firstPost": {
-                    "authorId": "d66b3f8c-2271-4afb-a348-e370effff",
-                    "content": "First post man"
-                }
-            }
-        @param body Body received from the API.
+     * Constructor from a body received from the API.
+     * @param body Body received from the API.
      */
     public ForumThreadBody(String body) {
         JsonParser springParser = JsonParserFactory.getJsonParser();
@@ -70,7 +60,7 @@ public class ForumThreadBody {
     }
 
     /**
-     * Getter for the title of the thread.
+     * Getter for the title of the {@link ForumThread}.
      * @return Title of the thread.
      */
     public @Nullable String getTitle() {

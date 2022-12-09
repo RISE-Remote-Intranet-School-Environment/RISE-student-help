@@ -25,7 +25,7 @@ public class PostController {
     @Autowired private AuthorRepository authorRepository;
 
     /**
-     *  Get post by its ID.
+     *  Get {@link IPost} by its ID.
      *  @param postId ID of the post to get.
      *  @return Post corresponding to the ID.
      */
@@ -36,13 +36,9 @@ public class PostController {
 
 
     /**
-     * Patch request to update the content of a post.
+     * Patch request to update the content of a {@link IPost}.
      * @param postId ID of the post to update.
      * @param body Body passed to the request in a JSON format.
-     *             {
-     *                  "content": "<newContent>",
-     *                  "authorId": "<authorId>"
-     *             }
      * @return Post with the content updated.
      */
     @PatchMapping(value = "/posts/{postId}", produces="application/json")
@@ -64,13 +60,9 @@ public class PostController {
     }
 
     /**
-     *  Put request to answer to a post by its ID.
+     *  Put request to answer to a {@link IPost} by its ID.
      * @param postId ID of the post to answer.
      * @param body  Body sent to the request in JSON format.
-     *              {
-     *                  "content": "<childContent>",
-     *                  "authorId": "<authorId>"
-     *              }
      * @return Child that have been created.
      */
     @PutMapping(value = "/posts/{postId}/answers", produces="application/json")
@@ -98,7 +90,7 @@ public class PostController {
     }
 
     /**
-     * Delete a post by its ID.
+     * Delete a {@link IPost} by its ID.
      * @param postId ID of the post to delete.
      * @return Post that have been deleted.
      */
@@ -118,7 +110,7 @@ public class PostController {
     }
 
     /**
-     * Get all the post that exists in the databases.
+     * Get all the {@link IPost} that exists in the databases.
      * @return List with the post that are in the database.
      */
     @GetMapping(value = "/posts", produces = "application/json")
