@@ -250,7 +250,7 @@ Here is the database relational diagram used in the project.
 
 ## :blue_book: Code documentation
 
-The code is documented using `Javadoc`. You can view the code documentation by loading the [index.html][code-documentation].
+The code is documented using `Javadoc`. You can view the code documentation by loading [index.html][code-documentation] file.
 
 ### Class
 
