@@ -2,6 +2,7 @@ package be.ecam.ms_studenthelp.ThreadUnitTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -16,7 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class UnitTestThreadsUpdateContent {
-    private final int port = 8080;
+    @Value("${server.port}")
+    private int port;
     @Autowired
     private MockMvc mockMvc;
 
@@ -24,7 +26,7 @@ public class UnitTestThreadsUpdateContent {
     public void unitTestThreadsUpdateContent() throws Exception {
         String id = CreateThreadTestForThreads.createThreadTestForThreads(mockMvc, port);
 
-        String json = "{\"title\":\"Test Update\",\"category\":\"Math\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8eac-2271-4afb-a348-e370effff\",\"content\":\"Fist Post\"}}";
+        String json = "{\"title\":\"Test Update\",\"category\":\"TestUnit\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8eac-2271-4afb-a348-e370effff\",\"content\":\"Fist Post\"}}";
         this.mockMvc.perform((patch("http://localhost:" + port + "/threads/" + id)
                 .content(json)
                 .contentType(MediaType.APPLICATION_JSON)
