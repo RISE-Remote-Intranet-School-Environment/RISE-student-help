@@ -48,6 +48,7 @@ public class CategoryController {
 					String.format("The category %s is already on the database", categoryBody.getTitle()));
 		}
 
+		// Save the category in the database
 		categoryRepository.save(categoryEntity);
 		return categoryEntity.toCategory();
 	}

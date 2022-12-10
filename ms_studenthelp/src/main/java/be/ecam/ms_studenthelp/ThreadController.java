@@ -115,9 +115,12 @@ public class ThreadController {
         if (forumThreadBody.getTitle() != null) {
             threadEntity.setTitle(forumThreadBody.getTitle());
         }
+
+        // Check that the tag is not null
         if (forumThreadBody.getTags() != null) {
             Set<TagEntity> tagEntities = new HashSet<>();
 
+            // Add every tag received in the body to the database
             for (String tag : forumThreadBody.getTags()) {
                 TagEntity tagEntity = tagRepository.findByTitleAndThread(tag, threadEntity);
 
@@ -127,6 +130,7 @@ public class ThreadController {
             threadEntity.setTags(tagEntities);
         }
 
+        // Set the thread category
         if (forumThreadBody.getCategory() != null) {
             threadEntity.setCategory(DatabaseUtils.getCategoryFromDatabase(
                     forumThreadBody.getCategory(),
@@ -188,7 +192,6 @@ public class ThreadController {
      */
     @GetMapping("/threads/{threadId}/tags")
     public Set<Tag> getThreadsThreadIdTags(@PathVariable("threadId") String threadId) {
-
         return DatabaseUtils.getForumThreadFromDatabase(threadId, threadRepository).toForumThread().getTags();
     }
 
@@ -205,6 +208,7 @@ public class ThreadController {
         ForumTagBody forumTagBody = ForumTagBody.fromBody(body);
         String tag = forumTagBody.getTag();
 
+        // Check that the tag was passed in the body
         if (tag != null) {
             TagEntity tagEntity = new TagEntity(tag, threadEntity);
 
@@ -226,7 +230,6 @@ public class ThreadController {
      */
     @DeleteMapping("/threads/{threadId}/tags/{tagtitle}")
     public Set<Tag> DeleteTagFromThread(@PathVariable("tagtitle") String tagTitle, @PathVariable("threadId") String threadId) {
-
         ThreadEntity threadEntity = DatabaseUtils.getForumThreadFromDatabase(threadId, threadRepository);
         TagEntity tag = tagRepository.findByTitleAndThread(tagTitle, threadEntity);
         tagRepository.deleteById(tag.getId());

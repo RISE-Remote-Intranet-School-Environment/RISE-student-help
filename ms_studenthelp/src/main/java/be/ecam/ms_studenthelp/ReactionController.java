@@ -59,6 +59,7 @@ public class ReactionController {
         PostEntity postEntity = DatabaseUtils.getPostFromDatabase(postId, postRepository);
         ReactionBody reactionBody = new ReactionBody(body);
 
+        // Check the field passed in the body
         if ((reactionBody.getValue() == null) || (reactionBody.getAuthorId() == null)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Value and authorId should be presents in the body !");
@@ -68,6 +69,7 @@ public class ReactionController {
                     "Value should be 1 or -1 !");
         }
 
+        // Get the author and the reaction from the database
         AuthorEntity authorEntity = DatabaseUtils.getAuthorFromDatabase(
                 reactionBody.getAuthorId(),
                 authorRepository);

@@ -47,6 +47,7 @@ public class ForumThreadBody {
         JsonParser springParser = JsonParserFactory.getJsonParser();
         Map<String,Object> body_data = springParser.parseMap(body);
 
+        // Set the parameters from the body
         title = (String) body_data.get("title");
         tags = (List<String>) body_data.get("tags");
         category = (String) body_data.get("category");
