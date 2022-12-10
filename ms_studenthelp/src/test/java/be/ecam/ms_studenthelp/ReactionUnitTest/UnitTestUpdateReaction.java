@@ -4,6 +4,7 @@ import be.ecam.ms_studenthelp.PostUnitTest.CreateThreadTestForPosts;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,7 +23,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class UnitTestUpdateReaction {
-    private final int port = 8080;
+    @Value("${server.port}")
+    private int port;
     @Autowired
     private MockMvc mockMvc;
 
