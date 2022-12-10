@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-
 import java.util.List;
 import java.util.Map;
 
@@ -38,11 +37,8 @@ class UnitTestUpdateReaction {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)));
 
-
-
         MvcResult answer = mockMvc.perform(get("http://localhost:" + port + "/posts/" + IdPost + "/reactions"))
                 .andReturn();
-
 
         MockHttpServletResponse response = answer.getResponse();
         JsonParser springParser = JsonParserFactory.getJsonParser();

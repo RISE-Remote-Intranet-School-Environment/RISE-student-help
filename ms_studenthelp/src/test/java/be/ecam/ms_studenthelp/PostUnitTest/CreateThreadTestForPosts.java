@@ -1,15 +1,11 @@
 package be.ecam.ms_studenthelp.PostUnitTest;
 
-
-import be.ecam.ms_studenthelp.CategoriesUnitTest.CreateCategoriesForTests;
-import be.ecam.ms_studenthelp.CategoriesUnitTest.DeleteCategoriesForTests;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-
 import java.util.Map;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
