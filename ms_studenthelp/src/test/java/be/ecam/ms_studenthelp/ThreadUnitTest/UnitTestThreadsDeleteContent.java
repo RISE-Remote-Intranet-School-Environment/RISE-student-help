@@ -26,6 +26,7 @@ class UnitTestThreadsDeleteContent {
 
 		this.mockMvc.perform(delete("http://localhost:" + port + "/threads/" + id))
 				.andExpect(status().isOk());
+
 		this.mockMvc.perform(get("http://localhost:" + port + "/threads/" + id))
 				.andExpect(status().isNotFound());
 	}

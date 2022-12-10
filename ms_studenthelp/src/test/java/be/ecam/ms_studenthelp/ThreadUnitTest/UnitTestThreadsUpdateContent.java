@@ -31,6 +31,7 @@ public class UnitTestThreadsUpdateContent {
                 .content(json)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)));
+
         this.mockMvc.perform(get("http://localhost:" + port + "/threads/" + id))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title", is("Test Update")));

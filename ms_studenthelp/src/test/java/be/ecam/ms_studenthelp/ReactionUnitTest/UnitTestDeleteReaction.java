@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -48,8 +47,8 @@ class UnitTestDeleteReaction {
         MockHttpServletResponse response = result.getResponse();
         JsonParser springParser = JsonParserFactory.getJsonParser();
         List<Object> answer = springParser.parseList(response.getContentAsString());
-
         List<String> responseEmptyList = Collections.emptyList();
+
         Assert.assertEquals(answer, responseEmptyList);
     }
 }

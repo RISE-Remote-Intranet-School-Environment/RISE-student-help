@@ -18,7 +18,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class UnitTestDeletePostContent {
@@ -49,8 +48,8 @@ class UnitTestDeletePostContent {
 
         this.mockMvc.perform(delete("http://localhost:" + port + "/posts/" + replyFirstPost))
                 .andExpect(status().isOk());
+
         this.mockMvc.perform(get("http://localhost:" + port + "/posts/" + replyFirstPost))
                 .andExpect(status().isNotFound());
-
     }
 }
