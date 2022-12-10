@@ -1,5 +1,6 @@
 package be.ecam.ms_studenthelp.ThreadUnitTest;
 
+import be.ecam.ms_studenthelp.CategoriesUnitTest.CreateCategoriesForUnitTest;
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
 import org.springframework.http.MediaType;
@@ -13,7 +14,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class CreateThreadTestForThreads {
     public static String createThreadTestForThreads(MockMvc mockMvc, int port) throws Exception {
-        String json = "{\"title\":\"Test thread\",\"category\":\"TestUnit\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8c-2271-4afb-a348-e370effff\",\"content\":\"First post\"}}";
+        CreateCategoriesForUnitTest.createCategoriesForUnitTest(mockMvc,port);
+        String json = "{\"title\":\"Test thread\",\"category\":\"UnitTest\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8c-2271-4afb-a348-e370effff\",\"content\":\"First post\"}}";
 
         MvcResult result = mockMvc.perform(post("http://localhost:" + port + "/threads/")
                 .content(json)

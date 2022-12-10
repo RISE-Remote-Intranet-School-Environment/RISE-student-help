@@ -26,7 +26,7 @@ public class UnitTestThreadsUpdateContent {
     public void unitTestThreadsUpdateContent() throws Exception {
         String id = CreateThreadTestForThreads.createThreadTestForThreads(mockMvc, port);
 
-        String json = "{\"title\":\"Test Update\",\"category\":\"TestUnit\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8eac-2271-4afb-a348-e370effff\",\"content\":\"Fist Post\"}}";
+        String json = "{\"title\":\"Test Update\",\"category\":\"UnitTest\",\"tags\":[],\"firstPost\":{\"authorId\":\"d66b3f8eac-2271-4afb-a348-e370effff\",\"content\":\"Fist Post\"}}";
         this.mockMvc.perform((patch("http://localhost:" + port + "/threads/" + id)
                 .content(json)
                 .contentType(MediaType.APPLICATION_JSON)
