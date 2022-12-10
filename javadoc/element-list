@@ -1,0 +1,7 @@
+be.ecam.ms_studenthelp
+be.ecam.ms_studenthelp.Database.entities
+be.ecam.ms_studenthelp.Database.repositories
+be.ecam.ms_studenthelp.Interfaces
+be.ecam.ms_studenthelp.JsonSerializers
+be.ecam.ms_studenthelp.Object
+be.ecam.ms_studenthelp.utils

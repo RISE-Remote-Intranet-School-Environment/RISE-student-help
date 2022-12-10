@@ -248,6 +248,10 @@ Here is the database relational diagram used in the project.
 
 ![Database diagram][database-diagram]
 
+## :blue_book: Code documentation
+
+The code is documented using `Javadoc`. You can view the code documentation by loading the [index.html][code-documentation].
+
 ### Class
 
 **WIP**
@@ -272,6 +276,7 @@ Distributed under the AGPL-3.0 License. See [LICENSE.md][license] for more infor
 [database-diagram]: ./ms_studenthelp.png
 [license]: ./LICENSE.md
 [database-script]: ./ms_studenthelp.sql
+[code-documentation]: ./javadoc/index.html
 
 <!-- Links -->
 [spring-boot]: https://spring.io/projects/spring-boot
