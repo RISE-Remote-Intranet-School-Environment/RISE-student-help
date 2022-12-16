@@ -1,6 +1,6 @@
-package be.ecam.ms_studenthelp.Database.repositories;
+package be.ecam.ms_studenthelp.Database.Repositories;
 
-import be.ecam.ms_studenthelp.Database.entities.ThreadEntity;
+import be.ecam.ms_studenthelp.Database.Entities.ThreadEntity;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.NonNull;

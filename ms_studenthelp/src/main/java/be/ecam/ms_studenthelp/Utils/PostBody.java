@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp.utils;
+package be.ecam.ms_studenthelp.Utils;
 
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;

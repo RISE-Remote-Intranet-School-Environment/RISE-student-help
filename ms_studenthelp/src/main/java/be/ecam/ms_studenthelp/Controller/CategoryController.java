@@ -3,11 +3,11 @@ package be.ecam.ms_studenthelp.Controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import be.ecam.ms_studenthelp.Database.entities.CategoryEntity;
-import be.ecam.ms_studenthelp.Database.repositories.CategoryRepository;
+import be.ecam.ms_studenthelp.Database.Entities.CategoryEntity;
+import be.ecam.ms_studenthelp.Database.Repositories.CategoryRepository;
 import be.ecam.ms_studenthelp.Object.Category;
-import be.ecam.ms_studenthelp.utils.CategoryBody;
-import be.ecam.ms_studenthelp.utils.DatabaseUtils;
+import be.ecam.ms_studenthelp.Utils.CategoryBody;
+import be.ecam.ms_studenthelp.Utils.DatabaseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

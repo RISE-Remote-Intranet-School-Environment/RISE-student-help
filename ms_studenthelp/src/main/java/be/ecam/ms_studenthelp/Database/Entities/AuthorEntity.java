@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp.Database.entities;
+package be.ecam.ms_studenthelp.Database.Entities;
 
 import be.ecam.ms_studenthelp.Object.Author;
 import org.springframework.lang.NonNull;

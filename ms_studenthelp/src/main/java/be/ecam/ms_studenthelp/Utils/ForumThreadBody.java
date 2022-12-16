@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp.utils;
+package be.ecam.ms_studenthelp.Utils;
 import be.ecam.ms_studenthelp.Object.ForumThread;
 
 import org.springframework.boot.json.JsonParser;

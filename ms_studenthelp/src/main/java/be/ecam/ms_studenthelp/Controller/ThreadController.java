@@ -1,15 +1,15 @@
 package be.ecam.ms_studenthelp.Controller;
 
-import be.ecam.ms_studenthelp.Database.entities.*;
-import be.ecam.ms_studenthelp.Database.repositories.AuthorRepository;
-import be.ecam.ms_studenthelp.Database.repositories.CategoryRepository;
-import be.ecam.ms_studenthelp.Database.repositories.TagRepository;
-import be.ecam.ms_studenthelp.Database.repositories.ThreadRepository;
+import be.ecam.ms_studenthelp.Database.Entities.*;
+import be.ecam.ms_studenthelp.Database.Repositories.AuthorRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.CategoryRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.TagRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.ThreadRepository;
 import be.ecam.ms_studenthelp.Object.*;
-import be.ecam.ms_studenthelp.utils.DatabaseUtils;
-import be.ecam.ms_studenthelp.utils.ForumTagBody;
-import be.ecam.ms_studenthelp.utils.ForumThreadBody;
-import be.ecam.ms_studenthelp.utils.PostBody;
+import be.ecam.ms_studenthelp.Utils.DatabaseUtils;
+import be.ecam.ms_studenthelp.Utils.ForumTagBody;
+import be.ecam.ms_studenthelp.Utils.ForumThreadBody;
+import be.ecam.ms_studenthelp.Utils.PostBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;

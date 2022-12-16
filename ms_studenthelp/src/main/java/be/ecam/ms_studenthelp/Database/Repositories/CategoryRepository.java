@@ -1,9 +1,9 @@
-package be.ecam.ms_studenthelp.Database.repositories;
+package be.ecam.ms_studenthelp.Database.Repositories;
 
 import java.util.List;
 import java.util.Optional;
 
-import be.ecam.ms_studenthelp.Database.entities.CategoryEntity;
+import be.ecam.ms_studenthelp.Database.Entities.CategoryEntity;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.NonNull;
