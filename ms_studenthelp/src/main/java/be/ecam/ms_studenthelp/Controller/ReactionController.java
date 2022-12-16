@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp;
+package be.ecam.ms_studenthelp.Controller;
 
 import java.util.*;
 import java.util.stream.Collectors;

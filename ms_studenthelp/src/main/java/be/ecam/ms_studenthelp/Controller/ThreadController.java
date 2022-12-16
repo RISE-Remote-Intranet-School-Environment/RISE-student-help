@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp;
+package be.ecam.ms_studenthelp.Controller;
 
 import be.ecam.ms_studenthelp.Database.entities.*;
 import be.ecam.ms_studenthelp.Database.repositories.AuthorRepository;
