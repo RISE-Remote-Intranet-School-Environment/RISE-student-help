@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp.utils;
+package be.ecam.ms_studenthelp.Utils;
 
 import be.ecam.ms_studenthelp.Object.Tag;
 import org.springframework.boot.json.JsonParser;

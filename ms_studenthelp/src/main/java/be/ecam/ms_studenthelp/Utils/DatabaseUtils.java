@@ -1,17 +1,17 @@
-package be.ecam.ms_studenthelp.utils;
+package be.ecam.ms_studenthelp.Utils;
 
 import be.ecam.ms_studenthelp.Object.Author;
 import be.ecam.ms_studenthelp.Object.Category;
 import be.ecam.ms_studenthelp.Object.ForumThread;
 import be.ecam.ms_studenthelp.Object.Post;
-import be.ecam.ms_studenthelp.Database.entities.AuthorEntity;
-import be.ecam.ms_studenthelp.Database.entities.CategoryEntity;
-import be.ecam.ms_studenthelp.Database.entities.PostEntity;
-import be.ecam.ms_studenthelp.Database.entities.ThreadEntity;
-import be.ecam.ms_studenthelp.Database.repositories.AuthorRepository;
-import be.ecam.ms_studenthelp.Database.repositories.CategoryRepository;
-import be.ecam.ms_studenthelp.Database.repositories.PostRepository;
-import be.ecam.ms_studenthelp.Database.repositories.ThreadRepository;
+import be.ecam.ms_studenthelp.Database.Entities.AuthorEntity;
+import be.ecam.ms_studenthelp.Database.Entities.CategoryEntity;
+import be.ecam.ms_studenthelp.Database.Entities.PostEntity;
+import be.ecam.ms_studenthelp.Database.Entities.ThreadEntity;
+import be.ecam.ms_studenthelp.Database.Repositories.AuthorRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.CategoryRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.PostRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.ThreadRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.web.server.ResponseStatusException;

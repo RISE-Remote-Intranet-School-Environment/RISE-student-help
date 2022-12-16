@@ -3,17 +3,15 @@ package be.ecam.ms_studenthelp.Controller;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import javax.servlet.http.HttpServletResponse;
-
-import be.ecam.ms_studenthelp.Database.entities.AuthorEntity;
-import be.ecam.ms_studenthelp.Database.entities.PostEntity;
-import be.ecam.ms_studenthelp.Database.entities.ReactionEntity;
-import be.ecam.ms_studenthelp.Database.repositories.AuthorRepository;
-import be.ecam.ms_studenthelp.Database.repositories.PostRepository;
-import be.ecam.ms_studenthelp.Database.repositories.ReactionRepository;
+import be.ecam.ms_studenthelp.Database.Entities.AuthorEntity;
+import be.ecam.ms_studenthelp.Database.Entities.PostEntity;
+import be.ecam.ms_studenthelp.Database.Entities.ReactionEntity;
+import be.ecam.ms_studenthelp.Database.Repositories.AuthorRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.PostRepository;
+import be.ecam.ms_studenthelp.Database.Repositories.ReactionRepository;
 import be.ecam.ms_studenthelp.Interfaces.IPost;
-import be.ecam.ms_studenthelp.utils.DatabaseUtils;
-import be.ecam.ms_studenthelp.utils.ReactionBody;
+import be.ecam.ms_studenthelp.Utils.DatabaseUtils;
+import be.ecam.ms_studenthelp.Utils.ReactionBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

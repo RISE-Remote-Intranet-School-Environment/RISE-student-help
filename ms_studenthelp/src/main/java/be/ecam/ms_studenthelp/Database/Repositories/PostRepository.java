@@ -1,6 +1,6 @@
-package be.ecam.ms_studenthelp.Database.repositories;
+package be.ecam.ms_studenthelp.Database.Repositories;
 
-import be.ecam.ms_studenthelp.Database.entities.PostEntity;
+import be.ecam.ms_studenthelp.Database.Entities.PostEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.data.repository.CrudRepository;

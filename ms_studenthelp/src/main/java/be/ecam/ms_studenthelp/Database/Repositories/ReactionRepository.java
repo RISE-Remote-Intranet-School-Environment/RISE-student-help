@@ -1,8 +1,8 @@
-package be.ecam.ms_studenthelp.Database.repositories;
+package be.ecam.ms_studenthelp.Database.Repositories;
 
-import be.ecam.ms_studenthelp.Database.entities.AuthorEntity;
-import be.ecam.ms_studenthelp.Database.entities.PostEntity;
-import be.ecam.ms_studenthelp.Database.entities.ReactionEntity;
+import be.ecam.ms_studenthelp.Database.Entities.AuthorEntity;
+import be.ecam.ms_studenthelp.Database.Entities.PostEntity;
+import be.ecam.ms_studenthelp.Database.Entities.ReactionEntity;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.NonNull;
