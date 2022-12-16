@@ -288,9 +288,9 @@ Distributed under the AGPL-3.0 License. See [LICENSE.md][license] for more infor
 <!-- Internal file links -->
 [configuration-folder]: ./ms_studenthelp/src/main/resources/
 [open-api-schema]: ./schema.yaml
-[database-diagram]: ./ms_studenthelp.png
+[database-diagram]: ./mysql/ms_studenthelp.png
 [license]: ./LICENSE.md
-[database-script]: ./ms_studenthelp.sql
+[database-script]: ./mysql/ms_studenthelp.sql
 [code-documentation]: ./javadoc/index.html
 
 <!-- Links -->
