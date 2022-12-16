@@ -107,6 +107,21 @@ spring.application.name = demoservice
 server.error.include-message=always
 ```
 
+:bangbang: If you are using the application with `Docker`, for the `<database-ip>` you have to write `host.docker.internal`. For more details, please read the issues in [Stack Overflow][docker-mysql-stack-overflow].
+
+Here is another example using `Docker`:
+
+```properties
+server.port = 8080
+spring.jpa.hibernate.ddl-auto = none
+spring.datasource.url = jdbc:mysql://${MYSQL_HOST:host.docker.internal}:3306/ms_studenthelp
+spring.datasource.username = dummy
+spring.datasource.password = 1234
+spring.datasource.driver-class-name = com.mysql.jdbc.Driver
+spring.application.name = demoservice
+server.error.include-message=always
+```
+
 ### :hammer: Installation
 
 #### :whale: Setup with Docker (Recommended)
@@ -163,7 +178,7 @@ Note: You can use Gradle instead of the Gradle Wrapper (gradlew) if you have ins
 
 Supposing that you are on the main repository.
 
-Launch the Docker image. The `<application-port>` is set in the [configuration file][configuration-file].
+Launch the Docker image. The `<application-port>` is set in the `configuration file`.
 
 ```docker
 docker run -p <application-port>:<application-port> <your-username>/studenthelp
@@ -187,7 +202,7 @@ Launch the application using Gradle.
 ./gradlew bootRun
 ```
 
-You must be able to make HTTP request to the port defined in the [configuration file][configuration-file].
+You must be able to make HTTP request to the port defined in the `configuration file`.
 
 Note: You can use Gradle instead of the Gradle Wrapper (gradlew) if you have installed it on your machine.
 
@@ -298,3 +313,4 @@ Distributed under the AGPL-3.0 License. See [LICENSE.md][license] for more infor
 [junit-guide]: https://junit.org/junit5/docs/current/user-guide/
 [jpa]: https://spring.io/guides/gs/accessing-data-jpa/
 [jpa-tutorial]: https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa
+[docker-mysql-stack-overflow]: https://stackoverflow.com/questions/70200640/spring-boot-mysql-docker-containers
