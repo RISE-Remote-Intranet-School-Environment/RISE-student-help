@@ -1,4 +1,4 @@
-package be.ecam.ms_studenthelp;
+package be.ecam.ms_studenthelp.Controller;
 
 import be.ecam.ms_studenthelp.Database.entities.AuthorEntity;
 import be.ecam.ms_studenthelp.Database.entities.PostEntity;
